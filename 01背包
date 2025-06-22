@@ -1,1 +1,5 @@
 https://www.bilibili.com/video/BV1cg411g7Y6?spm_id_from=333.788.videopod.sections&vd_source=b89ca3fabedbc0abb28d5506ecf22ebe
+dp[i][j]//第i个物品时，j容量（背包现在有j）
+//dp[i][j]=max(dp[i-1][j],dp[i-1][j-item[i].w]+item[i].v)
+//注意要在防止越界，if(j>item[i].w)
+//初始化，第一行初始化，第一列初始化
