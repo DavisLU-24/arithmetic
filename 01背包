@@ -6,7 +6,7 @@ dp[i][j]//第i个物品时，j容量（背包现在有j）
 
 
 dp[i]一位数组的01背包；
-int a[2000]={0};//a数组i是背包容量
+int a[2000]={0};//a数组i是背包容量//先背包后物品
   for(int i=1;i<=n;++i){
     for(int j=m;j>=1;--j){
       if(j-b[i].v>=0)a[j]=max(a[j],a[j-b[i].v]+b[i].w);
