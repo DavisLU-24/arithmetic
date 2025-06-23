@@ -1,0 +1,12 @@
+排列数 target=x的时候用背包物品装下他
+for(int i=0;i<=target;++i){//为啥先遍历背包；确保每个物品都能在每一次杯排序排上；
+            for(int num:nums){
+                if(i>=num)dp[i]+=dp[i-num];
+            }
+        }
+组合数 
+for(int num:nums){
+            for(int i=num;i<=target;++i){
+                if(i>=num)dp[i]+=dp[i-num];
+            }
+        }
