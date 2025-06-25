@@ -1,3 +1,23 @@
 # 1.确定递归函数的参数和返回值//包含start，在start这层函数里push start
 # 2.确定终止条件
 # 3.单层搜索逻辑
+//回溯的剪枝 1.深度剪（要有k层后面有x层），2.在里层减 if（）return；
+vector<vector<int>> res;
+    vector<int> path;
+    int sum=0;
+    void backtracking(int k,int n,int start){
+        if(sum>n)return;
+        if(path.size()==k){
+            if(sum==n){
+                res.push_back(path);
+                return;
+            }else return;
+        }
+        for(int i=start;i<=10-(k-path.size());++i){
+            path.push_back(i);
+            sum+=i;
+            backtracking(k,n,i+1);
+            path.pop_back();
+            sum-=i;
+        }
+    }
